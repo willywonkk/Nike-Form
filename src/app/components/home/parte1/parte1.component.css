@@ -1,0 +1,35 @@
+.container {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;;
+    
+}
+
+.image {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+    
+}
+
+.text {
+    margin-top: 20px; /* Espacio encima del texto */
+    margin-bottom: 20px; /* Espacio debajo del texto */
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.rounded-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1b1b1bfb; /* Color del fondo */
+    color: white;
+    font-size: 16px;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}

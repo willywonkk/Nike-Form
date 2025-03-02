@@ -1,0 +1,82 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.producto-card:hover {
+    transform: scale(1.03);
+}
+
+.imagen-container {
+    width: 100%;
+    height: 0;
+    padding-top: 100%; /* Esto hace que el contenedor sea cuadrado */
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.producto-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 15px;
+    text-align: left; /* Alinea los textos a la izquierda */
+}
+
+.producto-nombre {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.producto-tipo {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.producto-precio {
+    font-size: 16px;
+    font-weight: bold;
+    color: #27ae60; /* Cambié el color del precio a verde */
+}
+
+.mensaje-vacio {
+    display: none; /* Este elemento se puede mostrar cuando no haya productos */
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #666;
+}

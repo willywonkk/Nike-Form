@@ -1,0 +1,78 @@
+<form>
+  <h2>Añadir nuevo producto</h2>
+
+  <!-- Campo de referencia -->
+  <div>
+    <label for="reference">Numero de referencia</label>
+    <input type="text" id="reference">
+    <div>
+      <p>Este campo es obligatorio.</p>
+    </div>
+  </div>
+
+  <!-- Campo de nombre -->
+  <div>
+    <label for="name">Nombre de producto</label>
+    <input type="text" id="name">
+    <div>
+      <p>Este campo es obligatorio.</p>
+      <p>El nombre debe tener al menos 3 caracteres.</p>
+      <p>El nombre no puede tener más de 50 caracteres.</p>
+      <p>El nombre del producto ya está en uso.</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="price">Precio</label>
+    <input type="number" id="price">
+    <div>
+      <p>Este campo es obligatorio.</p>
+      <p>El precio no puede ser negativo.</p>
+      <p>El precio no puede ser mayor a 10,000.</p>
+    </div>
+  </div>
+
+  <!-- Campo de descripción -->
+  <div>
+    <label for="description">Descripcion</label>
+    <textarea id="description" rows="3"></textarea>
+    <div>
+      <p>Este campo es obligatorio.</p>
+      <p>La descripción debe tener al menos 10 caracteres.</p>
+      <p>La descripción no puede tener más de 200 caracteres.</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="onSale">En oferta</label>
+    <input type="checkbox" id="onSale">
+  </div>
+
+  <!-- Campo de tipo -->
+  <div>
+    <label for="type">Tipo de producto</label>
+    <select id="type">
+      <option value="">Seleccione un tipo</option>
+      <option>Tipo 1</option>
+      <option>Tipo 2</option>
+      <option>Tipo 3</option>
+    </select>
+    <div>
+      <p>Este campo es obligatorio.</p>
+    </div>
+  </div>
+
+  <!-- Campo de imagen -->
+  <div>
+    <label for="image">Imagen de producto</label>
+    <input type="file" id="image" accept="image/png, image/jpeg">
+    <div>
+      <p>Este campo es obligatorio.</p>
+    </div>
+    <div>
+      <img src="" alt="Imagen seleccionada"/>
+    </div>
+  </div>
+
+  <button type="submit">Agregar Producto</button>
+</form>
