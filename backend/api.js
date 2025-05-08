@@ -195,6 +195,33 @@ app.delete('/sales/:id', (req, res) => {
   });
 });
 
+
+// LOGIN
+app.post('/login', (req, res) => {
+  const { User_name, Password } = req.body;
+
+  db.query('SELECT * FROM USER WHERE User_name = ? AND Password = ?', [User_name, Password], (err, results) => {
+    if (err) return res.status(500).send(err);
+
+    if (results.length > 0) {
+      const user = results[0];
+      res.status(200).json({
+        message: 'Login exitoso',
+        user: {
+          id: user.Id_user,
+          username: user.User_name,
+          role: user.Id_rol
+        }
+      });
+    } else {
+      res.status(401).json({ message: 'Credenciales incorrectas' });
+    }
+  });
+});
+
+
+
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

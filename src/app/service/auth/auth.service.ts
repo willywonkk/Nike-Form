@@ -37,5 +37,8 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/users`, userData);
   }
 
-  // ...otros métodos (login, logout, etc.)
+  login(credentials: { User_name: string; Password: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/login`, credentials);
+  }
+  
 }
