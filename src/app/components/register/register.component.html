@@ -1,14 +1,68 @@
-<body>
-    <div class="container">
-        <h2>Iniciar sesión</h2>
-        <form action="#" method="post">
-            <input type="text" placeholder="Usuario" required>
-            <input type="password" placeholder="Contraseña" required>
-            <input type="text" placeholder="Nombre" required>
-            <input type="text" placeholder="Primer Apellido" required>
-            <input type="text" placeholder="Segundo Apellido" required>
-            <input type="date" placeholder="Fecha de nacimiento" required>
-            <button type="submit">Ingresar</button>
-        </form>
-    </div>
-</body>
+<div class="container">
+    <h2>Registro</h2>
+  
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  
+      <!-- Usuario -->
+      <div>
+        <input type="text" formControlName="userName" placeholder="Usuario" required />
+        <div *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched" style="color: red;">
+          El nombre de usuario es obligatorio.
+        </div>
+      </div>
+  
+      <!-- Contraseña -->
+      <div>
+        <input type="password" formControlName="password" placeholder="Contraseña" required />
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" style="color: red;">
+          La contraseña es obligatoria y debe tener al menos 6 caracteres.
+        </div>
+      </div>
+  
+      <!-- Confirmar Contraseña -->
+      <div>
+        <input type="password" formControlName="confirmPassword" placeholder="Confirmar Contraseña" required />
+      </div>
+  
+      <!-- Validación de coincidencia de contraseñas -->
+      <div *ngIf="registerForm.errors?.['passwordMismatch']" style="color: red;">
+        Las contraseñas no coinciden.
+      </div>
+  
+      <!-- Nombre -->
+      <div>
+        <input type="text" formControlName="name" placeholder="Nombre" required />
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" style="color: red;">
+          El nombre es obligatorio.
+        </div>
+      </div>
+  
+      <!-- Primer Apellido -->
+      <div>
+        <input type="text" formControlName="surname1" placeholder="Primer Apellido" required />
+        <div *ngIf="registerForm.get('surname1')?.invalid && registerForm.get('surname1')?.touched" style="color: red;">
+          El primer apellido es obligatorio.
+        </div>
+      </div>
+  
+      <!-- Segundo Apellido -->
+      <div>
+        <input type="text" formControlName="surname2" placeholder="Segundo Apellido" required />
+        <div *ngIf="registerForm.get('surname2')?.invalid && registerForm.get('surname2')?.touched" style="color: red;">
+          El segundo apellido es obligatorio.
+        </div>
+      </div>
+  
+      <!-- Fecha de nacimiento -->
+      <div>
+        <input type="date" formControlName="birthday" placeholder="Fecha de nacimiento" required />
+        <div *ngIf="registerForm.get('birthday')?.invalid && registerForm.get('birthday')?.touched" style="color: red;">
+          La fecha de nacimiento es obligatoria.
+        </div>
+      </div>
+  
+      <!-- Botón de registro -->
+      <button type="submit" [disabled]="registerForm.invalid">Registrar</button>
+    </form>
+  </div>
+  

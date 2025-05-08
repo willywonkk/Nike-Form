@@ -1,7 +1,15 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');  // Agregar esta línea
 const app = express();
 const port = 3000;
+
+// Usar CORS para permitir solicitudes desde tu frontend
+app.use(cors({
+  origin: 'http://localhost:4200',  // Permite solicitudes desde tu frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization']  // Encabezados permitidos
+}));
 
 app.use(express.json());
 
