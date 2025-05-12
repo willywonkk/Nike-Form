@@ -68,8 +68,6 @@ describe('FormComponent', () => {
       console.warn('El formulario sigue inválido después de completar todos los campos conocidos');
     }
     
-    // Esta prueba es informativa, no necesariamente debe pasar
-    pending('Verificación manual de la validez del formulario');
   });
 
   // Prueba básica de envío del formulario
